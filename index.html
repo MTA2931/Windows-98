@@ -1,0 +1,530 @@
+
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="./assets/Images/logo.png" rel="icon">
+    <title>Windows 98</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <!-- Windows 98 Boot Screen (با عکس و صدای خودت) -->
+    <div class="boot-screen" id="bootScreen">
+        <div class="boot-image" id="bootImage"></div>
+        <audio id="bootAudio" src="./assets/Sounds/start-sound.mp3" preload="auto"></audio>
+    </div>
+
+
+
+    <!-- Desktop Background -->
+    <div class="desktop" id="desktop">
+        <!-- My Computer Icon -->
+        <div class="desktop-icon" data-window="myComputer">
+            <div class="icon-image pure-css-pc">
+                <div class="pc-monitor"></div>
+                <div class="pc-stand"></div>
+                <div class="pc-base"></div>
+            </div>
+            <span class="icon-text">My Computer</span>
+        </div>
+
+        <!-- Recycle Bin Icon -->
+        <div class="desktop-icon" data-window="recycleBin">
+            <div class="icon-image pure-css-recycle">
+                <div class="recycle-bin"></div>
+                <div class="recycle-lid"></div>
+            </div>
+            <span class="icon-text">Recycle Bin</span>
+        </div>
+
+        <!-- Control Panel Icon -->
+        <div class="desktop-icon" data-window="controlPanel">
+            <div class="icon-image pure-css-cpanel">
+                <div class="cpanel-panel"></div>
+                <div class="cpanel-knob"></div>
+                <div class="cpanel-slider"></div>
+            </div>
+            <span class="icon-text">Control Panel</span>
+        </div>
+
+        <!-- Notepad Icon -->
+        <div class="desktop-icon" data-window="notepad">
+            <div class="icon-image pure-css-notepad">
+                <div class="notepad-page"></div>
+                <div class="notepad-lines"></div>
+            </div>
+            <span class="icon-text">Notepad</span>
+        </div>
+
+        <!-- Windows Media Player Icon -->
+        <div class="desktop-icon" data-window="mediaPlayer">
+            <div class="icon-image pure-css-wmp">
+                <div class="wmp-disc"></div>
+                <div class="wmp-note"></div>
+            </div>
+            <span class="icon-text">Media Player</span>
+        </div>
+
+        <div class="desktop-icon" data-window="internetExplorer">
+            <div class="icon-image pure-css-ie">
+                <div class="ie-circle"></div>
+                <div class="ie-eclipse"></div>
+                <div class="ie-arrow"></div>
+            </div>
+            <span class="icon-text">Internet Explorer</span>
+        </div>
+
+        <!-- Minesweeper Icon on Desktop -->
+        <div class="desktop-icon" data-window="minesweeper">
+            <div class="icon-image pure-css-minesweeper">
+                <div class="mine-bomb"></div>
+                <div class="mine-flag"></div>
+            </div>
+            <span class="icon-text">Minesweeper</span>
+        </div>
+    </div>
+
+    
+
+    <!-- Main Taskbar -->
+    <div class="taskbar">
+        <div class="start-button" id="startButton">
+            <div class="start-icon-pure"></div>
+            <span>Start</span>
+        </div>
+        <div class="taskbar-divider"></div>
+        <div class="taskbar-tray">
+            <div class="system-tray">
+                <div class="volume-icon">🔊</div>
+                <div class="time" id="clock">12:00 PM</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Menu -->
+    <div class="start-menu" id="startMenu">
+        <div class="start-header">
+            <div class="start-logo">📠</div>
+            <div class="start-title">Windows 98</div>
+        </div>
+        <div class="start-items">
+            <div class="start-item" data-window="myComputer">
+                <span class="start-icon">🖥️</span> My Computer
+            </div>
+            <div class="start-item" data-window="recycleBin">
+                <span class="start-icon">🗑️</span> Recycle Bin
+            </div>
+            <div class="start-item" data-window="controlPanel">
+                <span class="start-icon">⚙️</span> Control Panel
+            </div>
+            <div class="start-item" data-window="notepad">
+                <span class="start-icon">📝</span> Notepad
+            </div>
+            <div class="start-separator"></div>
+            <div class="start-item" id="shutdownBtn">
+                <span class="start-icon">⏻</span> Shut Down...
+            </div>
+        </div>
+    </div>
+
+    <!-- Window: My Computer -->
+    <div class="window" id="windowMyComputer" data-window-id="myComputer" style="display: none; top: 50px; left: 50px; width: 480px; height: 360px;">
+        <div class="window-titlebar" data-drag-handle>
+            <div class="window-title">🖥️ My Computer</div>
+            <div class="window-controls">
+                <button class="window-btn minimize-btn">─</button>
+                <button class="window-btn maximize-btn">□</button>
+                <button class="window-btn close-btn">✖</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="folder-grid">
+                <div class="folder-item">
+                    <div class="folder-icon pure-css-folder"></div>
+                    <div>Drive C:</div>
+                </div>
+                <div class="folder-item">
+                    <div class="folder-icon pure-css-floppy"></div>
+                    <div>3.5 Floppy (A:)</div>
+                </div>
+                <div class="folder-item">
+                    <div class="folder-icon pure-css-printer"></div>
+                    <div>Printers</div>
+                </div>
+                <div class="folder-item">
+                    <div class="folder-icon pure-css-cd"></div>
+                    <div>CD-ROM (D:)</div>
+                </div>
+            </div>
+        </div>
+        <div class="resize-handle resize-nw"></div>
+        <div class="resize-handle resize-n"></div>
+        <div class="resize-handle resize-ne"></div>
+        <div class="resize-handle resize-w"></div>
+        <div class="resize-handle resize-e"></div>
+        <div class="resize-handle resize-sw"></div>
+        <div class="resize-handle resize-s"></div>
+        <div class="resize-handle resize-se"></div>
+    </div>
+
+    <!-- Window: Recycle Bin -->
+    <div class="window" id="windowRecycleBin" data-window-id="recycleBin" style="display: none; top: 100px; left: 150px; width: 400px; height: 320px;">
+        <div class="window-titlebar" data-drag-handle>
+            <div class="window-title">🗑️ Recycle Bin</div>
+            <div class="window-controls">
+                <button class="window-btn minimize-btn">─</button>
+                <button class="window-btn maximize-btn">□</button>
+                <button class="window-btn close-btn">✖</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="recycle-content" id="recycleContent">
+                <div class="recycle-empty-msg" id="emptyRecycleMsg">
+                    🗑️ The Recycle Bin is empty
+                </div>
+                <div class="recycle-items" id="recycleItems" style="display: none;">
+                    <!-- Deleted items will appear here -->
+                </div>
+            </div>
+            <div class="recycle-actions">
+                <button class="win98-btn" id="emptyRecycleBtn">Empty Recycle Bin</button>
+                <button class="win98-btn" id="restoreAllBtn">Restore All</button>
+            </div>
+        </div>
+        <div class="resize-handle resize-nw"></div>
+        <div class="resize-handle resize-n"></div>
+        <div class="resize-handle resize-ne"></div>
+        <div class="resize-handle resize-w"></div>
+        <div class="resize-handle resize-e"></div>
+        <div class="resize-handle resize-sw"></div>
+        <div class="resize-handle resize-s"></div>
+        <div class="resize-handle resize-se"></div>
+    </div>
+
+    <!-- Window: Control Panel -->
+    <div class="window" id="windowControlPanel" data-window-id="controlPanel" style="display: none; top: 80px; left: 200px; width: 520px; height: 380px;">
+        <div class="window-titlebar" data-drag-handle>
+            <div class="window-title">⚙️ Control Panel</div>
+            <div class="window-controls">
+                <button class="window-btn minimize-btn">─</button>
+                <button class="window-btn maximize-btn">□</button>
+                <button class="window-btn close-btn">✖</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="control-grid">
+                <div class="control-item" id="displaySettings">
+                    <div class="control-icon pure-css-display"></div>
+                    <div>Display</div>
+                </div>
+                <div class="control-item" id="soundSettings">
+                    <div class="control-icon pure-css-sound"></div>
+                    <div>Sound</div>
+                </div>
+                <div class="control-item" id="dateSettings">
+                    <div class="control-icon pure-css-date"></div>
+                    <div>Date/Time</div>
+                </div>
+                <div class="control-item" id="mouseSettings">
+                    <div class="control-icon pure-css-mouse"></div>
+                    <div>Mouse</div>
+                </div>
+            </div>
+        </div>
+        <div class="resize-handle resize-nw"></div>
+        <div class="resize-handle resize-n"></div>
+        <div class="resize-handle resize-ne"></div>
+        <div class="resize-handle resize-w"></div>
+        <div class="resize-handle resize-e"></div>
+        <div class="resize-handle resize-sw"></div>
+        <div class="resize-handle resize-s"></div>
+        <div class="resize-handle resize-se"></div>
+    </div>
+
+    <!-- Window: Internet Explorer -->
+    <div class="window" id="windowInternetExplorer" data-window-id="internetExplorer" style="display: none; top: 70px; left: 120px; width: 900px; height: 600px;">
+        <div class="window-titlebar" data-drag-handle>
+            <div class="window-title">🌐 Internet Explorer</div>
+            <div class="window-controls">
+                <button class="window-btn minimize-btn">─</button>
+                <button class="window-btn maximize-btn">□</button>
+                <button class="window-btn close-btn">✖</button>
+            </div>
+        </div>
+        
+        <!-- IE Toolbar -->
+        <div class="ie-toolbar">
+            <div class="ie-nav-buttons">
+                <button class="ie-nav-btn" id="ieBackBtn" disabled>◀ Back</button>
+                <button class="ie-nav-btn" id="ieForwardBtn" disabled>▶ Forward</button>
+                <button class="ie-nav-btn" id="ieRefreshBtn">⟳ Refresh</button>
+                <button class="ie-nav-btn" id="ieStopBtn">✖ Stop</button>
+            </div>
+            <div class="ie-address-bar">
+                <span class="ie-address-label">Address</span>
+                <input type="text" class="ie-address-input" id="ieAddressBar" value="https://www.google.com">
+                <button class="ie-go-btn" id="ieGoBtn">Go</button>
+            </div>
+        </div>
+        
+        <!-- IE Menu Bar -->
+        <div class="ie-menubar">
+            <div class="ie-menu">File</div>
+            <div class="ie-menu">Edit</div>
+            <div class="ie-menu">View</div>
+            <div class="ie-menu">Favorites</div>
+            <div class="ie-menu">Tools</div>
+            <div class="ie-menu">Help</div>
+        </div>
+        
+        <!-- IE Content (iframe for Google) -->
+        <div class="ie-content">
+            <iframe id="ieFrame" src="https://www.google.com" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-downloads allow-modals"></iframe>
+            <div class="ie-loading" id="ieLoading" style="display: none;">
+                <div class="ie-loading-animation">
+                    <div class="ie-logo-animation">🌐</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- IE Status Bar -->
+        <div class="ie-statusbar">
+            <span id="ieStatusText">Done</span>
+            <span class="ie-zone-icon">🌐 Internet</span>
+        </div>
+        
+        <!-- Resize Handles -->
+        <div class="resize-handle resize-nw"></div>
+        <div class="resize-handle resize-n"></div>
+        <div class="resize-handle resize-ne"></div>
+        <div class="resize-handle resize-w"></div>
+        <div class="resize-handle resize-e"></div>
+        <div class="resize-handle resize-sw"></div>
+        <div class="resize-handle resize-s"></div>
+        <div class="resize-handle resize-se"></div>
+    </div>
+
+    <!-- Window: Notepad -->
+    <div class="window" id="windowNotepad" data-window-id="notepad" style="display: none; top: 120px; left: 100px; width: 500px; height: 400px;">
+        <div class="window-titlebar" data-drag-handle>
+            <div class="window-title">📝 Untitled - Notepad</div>
+            <div class="window-controls">
+                <button class="window-btn minimize-btn">─</button>
+                <button class="window-btn maximize-btn">□</button>
+                <button class="window-btn close-btn">✖</button>
+            </div>
+        </div>
+        <div class="notepad-menubar">
+            <div class="notepad-menu">File</div>
+            <div class="notepad-menu">Edit</div>
+            <div class="notepad-menu">Format</div>
+            <div class="notepad-menu">View</div>
+            <div class="notepad-menu">Help</div>
+        </div>
+        <textarea class="notepad-textarea" id="notepadText" placeholder="Type something here..."></textarea>
+        <div class="notepad-status">
+            <span id="notepadStatus">Ln 1, Col 1</span>
+        </div>
+        <div class="resize-handle resize-nw"></div>
+        <div class="resize-handle resize-n"></div>
+        <div class="resize-handle resize-ne"></div>
+        <div class="resize-handle resize-w"></div>
+        <div class="resize-handle resize-e"></div>
+        <div class="resize-handle resize-sw"></div>
+        <div class="resize-handle resize-s"></div>
+        <div class="resize-handle resize-se"></div>
+    </div>
+
+    <!-- Window: Windows Media Player -->
+    <div class="window" id="windowMediaPlayer" data-window-id="mediaPlayer" style="display: none; top: 80px; left: 100px; width: 520px; height: 420px;">
+        <div class="window-titlebar" data-drag-handle>
+            <div class="window-title">🎵 Windows Media Player</div>
+            <div class="window-controls">
+                <button class="window-btn minimize-btn">─</button>
+                <button class="window-btn maximize-btn">□</button>
+                <button class="window-btn close-btn">✖</button>
+            </div>
+        </div>
+        
+        <!-- WMP Menu Bar -->
+        <div class="wmp-menubar">
+            <div class="wmp-menu">File</div>
+            <div class="wmp-menu">View</div>
+            <div class="wmp-menu">Play</div>
+            <div class="wmp-menu">Tools</div>
+            <div class="wmp-menu">Help</div>
+        </div>
+        
+        <!-- WMP Toolbar -->
+        <div class="wmp-toolbar">
+            <button class="wmp-btn" id="wmpOpenBtn">📂 Open</button>
+            <div class="wmp-separator"></div>
+            <button class="wmp-btn" id="wmpPrevBtn">⏮ Prev</button>
+            <button class="wmp-btn" id="wmpPlayBtn">▶ Play</button>
+            <button class="wmp-btn" id="wmpPauseBtn">⏸ Pause</button>
+            <button class="wmp-btn" id="wmpStopBtn">⏹ Stop</button>
+            <button class="wmp-btn" id="wmpNextBtn">⏭ Next</button>
+            <div class="wmp-separator"></div>
+            <button class="wmp-btn" id="wmpVolumeUpBtn">🔊 +</button>
+            <button class="wmp-btn" id="wmpVolumeDownBtn">🔉 -</button>
+        </div>
+        
+        <!-- WMP Visualization / Now Playing -->
+        <div class="wmp-visualization">
+            <canvas id="wmpWaveCanvas" width="480" height="100"></canvas>
+            <div class="wmp-now-playing" id="wmpNowPlaying">
+                <span class="wmp-status-text">No file loaded</span>
+            </div>
+        </div>
+        
+        <!-- WMP Equalizer -->
+        <div class="wmp-equalizer">
+            <div class="eq-slider" data-eq="0"><div class="eq-slider-bar" style="height: 40%"></div></div>
+            <div class="eq-slider" data-eq="1"><div class="eq-slider-bar" style="height: 60%"></div></div>
+            <div class="eq-slider" data-eq="2"><div class="eq-slider-bar" style="height: 80%"></div></div>
+            <div class="eq-slider" data-eq="3"><div class="eq-slider-bar" style="height: 50%"></div></div>
+            <div class="eq-slider" data-eq="4"><div class="eq-slider-bar" style="height: 70%"></div></div>
+            <div class="eq-slider" data-eq="5"><div class="eq-slider-bar" style="height: 30%"></div></div>
+            <div class="eq-slider" data-eq="6"><div class="eq-slider-bar" style="height: 90%"></div></div>
+            <div class="eq-slider" data-eq="7"><div class="eq-slider-bar" style="height: 45%"></div></div>
+            <div class="eq-slider" data-eq="8"><div class="eq-slider-bar" style="height: 65%"></div></div>
+            <div class="eq-slider" data-eq="9"><div class="eq-slider-bar" style="height: 55%"></div></div>
+        </div>
+        
+        <!-- WMP Progress Bar -->
+        <div class="wmp-progress-container">
+            <span class="wmp-time-current" id="wmpCurrentTime">00:00</span>
+            <div class="wmp-progress-bar" id="wmpProgressBar">
+                <div class="wmp-progress-fill" id="wmpProgressFill"></div>
+                <div class="wmp-progress-handle" id="wmpProgressHandle"></div>
+            </div>
+            <span class="wmp-time-total" id="wmpTotalTime">00:00</span>
+        </div>
+        
+        <!-- WMP Status Bar -->
+        <div class="wmp-statusbar" id="wmpStatusBar">
+            Ready
+        </div>
+        
+        <!-- Hidden Audio Element -->
+        <audio id="wmpAudio" style="display: none;"></audio>
+        
+        <!-- Resize Handles -->
+        <div class="resize-handle resize-nw"></div>
+        <div class="resize-handle resize-n"></div>
+        <div class="resize-handle resize-ne"></div>
+        <div class="resize-handle resize-w"></div>
+        <div class="resize-handle resize-e"></div>
+        <div class="resize-handle resize-sw"></div>
+        <div class="resize-handle resize-s"></div>
+        <div class="resize-handle resize-se"></div>
+    </div>
+    <!-- File Input for Media Player (Hidden) -->
+    <input type="file" id="wmpFileInput" accept="audio/mp3,audio/wav,audio/ogg" style="display: none;">
+
+    <!-- Window: Minesweeper -->
+    <div class="window" id="windowMinesweeper" data-window-id="minesweeper" style="display: none; top: 100px; left: 150px; width: auto; min-width: 280px;">
+        <div class="window-titlebar" data-drag-handle>
+            <div class="window-title">💣 Minesweeper</div>
+            <div class="window-controls">
+                <button class="window-btn minimize-btn">─</button>
+                <button class="window-btn maximize-btn">□</button>
+                <button class="window-btn close-btn">✖</button>
+            </div>
+        </div>
+        
+        <!-- Minesweeper Menu Bar -->
+        <div class="ms-menubar">
+            <div class="ms-menu" id="msGameMenu">Game</div>
+            <div class="ms-menu" id="msHelpMenu">Help</div>
+        </div>
+        
+        <!-- Game Dropdown Menu -->
+        <div class="ms-dropdown" id="msGameDropdown" style="display: none;">
+            <div class="ms-dropdown-item" data-difficulty="beginner">Beginner (9x9, 10 mines)</div>
+            <div class="ms-dropdown-item" data-difficulty="intermediate">Intermediate (16x16, 40 mines)</div>
+            <div class="ms-dropdown-item" data-difficulty="expert">Expert (16x30, 99 mines)</div>
+            <hr class="ms-dropdown-divider">
+            <div class="ms-dropdown-item" id="msNewGame">New Game (F2)</div>
+            <hr class="ms-dropdown-divider">
+            <div class="ms-dropdown-item" id="msBestTimes">Best Times...</div>
+        </div>
+        
+        <!-- Help Dropdown Menu -->
+        <div class="ms-dropdown" id="msHelpDropdown" style="display: none;">
+            <div class="ms-dropdown-item" id="msHelpTopics">Help Topics</div>
+            <hr class="ms-dropdown-divider">
+            <div class="ms-dropdown-item" id="msAbout">About Minesweeper...</div>
+        </div>
+        
+        <!-- Minesweeper Game Area -->
+        <div class="ms-game-container">
+            <!-- Status Panel -->
+            <div class="ms-status-panel">
+                <div class="ms-counter" id="msMineCounter">010</div>
+                <div class="ms-face" id="msFaceButton">🙂</div>
+                <div class="ms-timer" id="msTimer">000</div>
+            </div>
+            
+            <!-- Game Board -->
+            <div class="ms-board" id="msBoard"></div>
+        </div>
+        
+        <!-- Resize Handles -->
+        <div class="resize-handle resize-nw"></div>
+        <div class="resize-handle resize-n"></div>
+        <div class="resize-handle resize-ne"></div>
+        <div class="resize-handle resize-w"></div>
+        <div class="resize-handle resize-e"></div>
+        <div class="resize-handle resize-sw"></div>
+        <div class="resize-handle resize-s"></div>
+        <div class="resize-handle resize-se"></div>
+    </div>
+
+    <!-- Best Times Dialog -->
+    <div class="ms-dialog-overlay" id="msDialogOverlay" style="display: none;">
+        <div class="ms-dialog">
+            <div class="ms-dialog-titlebar">
+                <span>Best Times</span>
+                <button class="ms-dialog-close" id="msDialogClose">✖</button>
+            </div>
+            <div class="ms-dialog-content">
+                <table class="ms-best-table">
+                    <tr><th></th><th>Beginner</th><th>Intermediate</th><th>Expert</th></tr>
+                    <tr><td>Fastest</td><td id="msTimeBeginner">999</td><td id="msTimeIntermediate">999</td><td id="msTimeExpert">999</td></tr>
+                </table>
+                <button class="ms-reset-btn" id="msResetTimes">Reset Times</button>
+            </div>
+            <div class="ms-dialog-buttons">
+                <button class="ms-dialog-ok" id="msDialogOk">OK</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Dialog Modal for Settings -->
+    <div class="dialog-overlay" id="dialogOverlay" style="display: none;">
+        <div class="dialog-box">
+            <div class="dialog-titlebar">
+                <span id="dialogTitle">Settings</span>
+                <button class="dialog-close" id="dialogCloseBtn">✖</button>
+            </div>
+            <div class="dialog-content" id="dialogContent">
+                <!-- Dynamic content -->
+            </div>
+            <div class="dialog-buttons">
+                <button class="win98-btn" id="dialogOkBtn">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./JS/app.js"></script>
+    <script src="./JS/games.js"></script>
+    <script src="./JS/media-player.js"></script>
+    <script src="./JS/internet-exployer.js"></script>
+</body>
+</html>
+
